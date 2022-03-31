@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"github.com/BcYe/blog-api/routers/api/drinks_controller"
+	"github.com/BcYe/blog-api/pkg/controller/drinks_controller"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )

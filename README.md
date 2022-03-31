@@ -16,3 +16,6 @@ CREATE TABLE `bc_db`.`drinks_order` (
   `order_date` BIGINT COMMENT '訂購日期',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='飲料訂單';
+
+
+因目前還沒有實際經手過 Golang 的案子，如果在寫法或架構上有不對的地方，麻煩多多指教
