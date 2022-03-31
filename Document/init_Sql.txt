@@ -1,0 +1,15 @@
+CREATE DATABASE `bc_db`;
+
+DROP TABLE IF EXISTS `bc_db`.`drinks_order`;
+CREATE TABLE `bc_db`.`drinks_order` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(30) NOT NULL COMMENT '訂購者姓名',
+  `drinks_name` varchar(30) NOT NULL COMMENT '飲料名稱',
+  `sugar` int NOT NULL COMMENT '甜度',
+  `ice` int NOT NULL COMMENT '冰量',
+  `price` int NOT NULL COMMENT '金額',
+  `note` varchar(100) DEFAULT '' COMMENT '加料，備註事項',
+  `order_date` BIGINT COMMENT '訂購日期',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='飲料訂單';
+
