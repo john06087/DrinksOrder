@@ -15,7 +15,7 @@ import (
 func SaveDrinksOrder(ginContext *gin.Context) {
 	// 1. 取得前端參數
 	var drinks_order_vo vo.Drinks_order_vo
-	ginContext.ShouldBindJSON(&drinks_order_vo) // pass as pointer
+	ginContext.ShouldBindJSON(&drinks_order_vo)
 
 	// 2. 取得用戶個人資料
 	nowTime := time.Now()
