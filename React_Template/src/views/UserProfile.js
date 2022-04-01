@@ -1,17 +1,10 @@
 import React from "react";
-
 // react-bootstrap components
 import {
-  Badge,
   Button,
-  Card,
-  Form,
-  Navbar,
-  Nav,
-  Container,
-  Row,
-  Col,
+  Card, Col, Container, Form, Row
 } from "react-bootstrap";
+
 
 function User() {
   return (
@@ -26,35 +19,34 @@ function User() {
               <Card.Body>
                 <Form>
                   <Row>
-                    <Col className="pr-1" md="5">
+                    <Col md="12">
                       <Form.Group>
-                        <label>Company (disabled)</label>
+                        <label>User name</label>
                         <Form.Control
-                          defaultValue="Creative Code Inc."
-                          disabled
-                          placeholder="Company"
+                          placeholder="訂購者姓名"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
-                    <Col className="px-1" md="3">
+                  </Row>
+                  <Row>
+                    <Col md="12">
                       <Form.Group>
-                        <label>Username</label>
+                        <label>Drinks name</label>
                         <Form.Control
-                          defaultValue="michael23"
-                          placeholder="Username"
+                          placeholder="飲料名稱"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
-                    <Col className="pl-1" md="4">
+                  </Row>
+                  <Row>
+                    <Col md="12">
                       <Form.Group>
-                        <label htmlFor="exampleInputEmail1">
-                          Email address
-                        </label>
+                        <label>price</label>
                         <Form.Control
-                          placeholder="Email"
-                          type="email"
+                          placeholder="金額"
+                          type="number"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
@@ -62,20 +54,18 @@ function User() {
                   <Row>
                     <Col className="pr-1" md="6">
                       <Form.Group>
-                        <label>First Name</label>
+                        <label>Sugar</label>
                         <Form.Control
-                          defaultValue="Mike"
-                          placeholder="Company"
+                          placeholder="甜度"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
                     <Col className="pl-1" md="6">
                       <Form.Group>
-                        <label>Last Name</label>
+                        <label>Ice</label>
                         <Form.Control
-                          defaultValue="Andrew"
-                          placeholder="Last Name"
+                          placeholder="冰量"
                           type="text"
                         ></Form.Control>
                       </Form.Group>
@@ -84,55 +74,10 @@ function User() {
                   <Row>
                     <Col md="12">
                       <Form.Group>
-                        <label>Address</label>
-                        <Form.Control
-                          defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                          placeholder="Home Address"
-                          type="text"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="pr-1" md="4">
-                      <Form.Group>
-                        <label>City</label>
-                        <Form.Control
-                          defaultValue="Mike"
-                          placeholder="City"
-                          type="text"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                    <Col className="px-1" md="4">
-                      <Form.Group>
-                        <label>Country</label>
-                        <Form.Control
-                          defaultValue="Andrew"
-                          placeholder="Country"
-                          type="text"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                    <Col className="pl-1" md="4">
-                      <Form.Group>
-                        <label>Postal Code</label>
-                        <Form.Control
-                          placeholder="ZIP Code"
-                          type="number"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="12">
-                      <Form.Group>
-                        <label>About Me</label>
+                        <label>Note</label>
                         <Form.Control
                           cols="80"
-                          defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
-                          that two seat Lambo."
-                          placeholder="Here can be your description"
+                          placeholder="加料，備註事項"
                           rows="4"
                           as="textarea"
                         ></Form.Control>
@@ -144,71 +89,14 @@ function User() {
                     type="submit"
                     variant="info"
                   >
-                    Update Profile
+                    送出訂單
                   </Button>
                   <div className="clearfix"></div>
                 </Form>
               </Card.Body>
             </Card>
           </Col>
-          <Col md="4">
-            <Card className="card-user">
-              <div className="card-image">
-                <img
-                  alt="..."
-                  src={
-                    require("assets/img/photo-1431578500526-4d9613015464.jpeg")
-                      .default
-                  }
-                ></img>
-              </div>
-              <Card.Body>
-                <div className="author">
-                  <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="avatar border-gray"
-                      src={require("assets/img/faces/face-3.jpg").default}
-                    ></img>
-                    <h5 className="title">Mike Andrew</h5>
-                  </a>
-                  <p className="description">michael24</p>
-                </div>
-                <p className="description text-center">
-                  "Lamborghini Mercy <br></br>
-                  Your chick she so thirsty <br></br>
-                  I'm in that two seat Lambo"
-                </p>
-              </Card.Body>
-              <hr></hr>
-              <div className="button-container mr-auto ml-auto">
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                </Button>
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-twitter"></i>
-                </Button>
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-google-plus-square"></i>
-                </Button>
-              </div>
-            </Card>
-          </Col>
+         
         </Row>
       </Container>
     </>

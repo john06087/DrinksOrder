@@ -125,7 +125,6 @@ light-bootstrap-dashboard-react
     └── views
         ├── Dashboard.js
         ├── Icons.js
-        ├── Maps.js
         ├── Notifications.js
         ├── TableList.js
         ├── Typography.js
