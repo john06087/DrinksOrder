@@ -13,7 +13,7 @@ CREATE TABLE `bc_db`.`drinks_order` (
   `ice` int NOT NULL COMMENT '冰量',
   `price` int NOT NULL COMMENT '金額',
   `note` varchar(100) DEFAULT '' COMMENT '加料，備註事項',
-  `order_date` BIGINT COMMENT '訂購日期',
+  `order_date` int COMMENT '訂購日期',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='飲料訂單';
 

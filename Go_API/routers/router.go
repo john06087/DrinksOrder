@@ -16,8 +16,8 @@ func InitRouter() *gin.Engine {
 
 	// 2. 設定 API
 	apiDrinks := router.Group("/drinksController")
-	apiDrinks.POST("/drinksOrderList", drinks_controller.DrinksOrderList)
 	apiDrinks.POST("/saveDrinksOrder", drinks_controller.SaveDrinksOrder)
+	apiDrinks.POST("/drinksOrderList", drinks_controller.DrinksOrderList)
 
 	return router
 }
