@@ -16,7 +16,8 @@
     "react-notification-alert": "0.0.13",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "react-scripts": "4.0.1"
+    "react-scripts": "4.0.1",
+    "sweetalert2": "^11.4.8"
   },
   "optionalDependencies": {
     "jquery": "3.5.1",
@@ -45,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "2.6.2"
   }
 }

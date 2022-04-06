@@ -1,22 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 // react-bootstrap components
 import {
   Card, Col, Container,
   Row, Table
 } from "react-bootstrap";
+import * as callApiUtil from "../util/CallApiUtil"
 
 
 
 function TableList() {
-  // React.useEffect(() => {
-  //   /* componentDidMount */
-  //   axios.post('localhost:8000/drinksController/drinksOrderList', { orderDate: '1234' })
-  //   .then((res) => { console.table(res.data) })
-  //   .catch((error) => { console.error(error) })
-    
-  
-    
-  // }, []); 
+  // State
+  const [drinksOrderList, setDrinksOrderList] = useState([]);
+
+
+
+  // ComponentDidMount
+  React.useEffect(() => {
+    // 初始化查詢當天日期
+    let date = '1234'
+
+    // Action: 查詢飲料訂單
+    queryDrinksOrderList(date);
+
+
+  }, []);
+
+  // Function
+  function queryDrinksOrderList(date) {
+    let vin = {
+      orderDate: date
+    }
+
+    callApiUtil.callApiPost('http://localhost:8000/drinksController/drinksOrderList', vin).then((data) => {
+      if (data.result) {
+        let drinksOrderSlice = data.drinks_order_slice
+        let drinksOrders = [];
+        let seq = 1;
+
+        // setState
+        setDrinksOrderList(drinksOrderList => (drinksOrderSlice)); 
+      } else {
+        swal.fire('Error!', '取得資料失敗', 'error');
+      }
+    })
+  }
+
   return (
     <>
       <Container fluid>
@@ -41,48 +69,21 @@ function TableList() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Dakota Rice</td>
-                      <td>$36,738</td>
-                      <td>Niger</td>
-                      <td>Oud-Turnhout</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Minerva Hooper</td>
-                      <td>$23,789</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Sage Rodriguez</td>
-                      <td>$56,142</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Philip Chaney</td>
-                      <td>$38,735</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Doris Greene</td>
-                      <td>$63,542</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Mason Porter</td>
-                      <td>$78,615</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                    </tr>
+                    {drinksOrderList != null && drinksOrderList.length > 0 ?
+                     drinksOrderList.map((item, index) => {
+                      return (  
+                        <tr key={index}>
+                          <td>{index + 1}</td>
+                          <td>Dakota Rice</td>
+                          <td>$36,738</td>
+                          <td>Niger</td>
+                          <td>Oud-Turnhout</td>
+                        </tr>);
+                      }):null
+                    }
+                  
+                   
+                  
                   </tbody>
                 </Table>
               </Card.Body>
