@@ -19,3 +19,9 @@ CREATE TABLE `bc_db`.`drinks_order` (
 
 
 因目前還沒有實際經手過 Golang 的案子，如果在寫法或架構上有不對的地方，麻煩多多指教
+
+待開發項目:
+	Loading Page
+	Jwt
+	修改訂單、刪除訂單
+	依照日期查詢訂單

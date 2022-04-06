@@ -106,12 +106,9 @@ const localizer = momentLocalizer(moment);
 ### Bug fixing
 - Renamed `src/layouts/Dashboard/Dashboard.jsx` to `src/layouts/Admin.jsx`
 - Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Dashboard.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Icons.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Notifications.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/TableList.jsx`
+- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/DrinkOrderList.jsx`
 - Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Typography.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/Upgrade.jsx`
-- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/UserProfile.jsx`
+- Renamed `src/views/Dashboard/Dashboard.jsx` to `src/views/DrinksOrderInfo.jsx`
 - Renamed `src/components/Header` to `src/components/Navbars`
 - Renamed `src/components/Navbars/Header.jsx` to `src/components/Navbars/AdminNavbar.jsx`
 - Renamed `src/components/Navbars/HeaderLinks.jsx` to `src/components/Navbars/AdminNavbarLinks.jsx`

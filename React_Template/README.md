@@ -123,13 +123,8 @@ light-bootstrap-dashboard-react
     │   └── Sidebar
     │       └── Sidebar.js
     └── views
-        ├── Dashboard.js
-        ├── Icons.js
-        ├── Notifications.js
-        ├── TableList.js
-        ├── Typography.js
-        ├── Upgrade.js
-        └── UserProfile.js
+        ├── DrinkOrderList.js
+        └── DrinksOrderInfo.js
 ```
 
 ## Browser Support

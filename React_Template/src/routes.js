@@ -15,63 +15,22 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Dashboard from "views/Dashboard.js";
-import UserProfile from "views/UserProfile.js";
-import TableList from "views/TableList.js";
-import Typography from "views/Typography.js";
-import Icons from "views/Icons.js";
-import Notifications from "views/Notifications.js";
-import Upgrade from "views/Upgrade.js";
+import DrinksOrderInfo from "views/DrinksOrderInfo.js";
+import DrinkOrderList from "views/DrinkOrderList.js";
 
 const dashboardRoutes = [
   {
-    upgrade: true,
-    path: "/upgrade",
-    name: "Upgrade to PRO",
-    icon: "nc-icon nc-alien-33",
-    component: Upgrade,
-    layout: "/admin",
-  },
-  {
-    path: "/dashboard",
-    name: "Dashboard",
-    icon: "nc-icon nc-chart-pie-35",
-    component: Dashboard,
-    layout: "/admin",
-  },
-  {
-    path: "/user",
-    name: "User Profile",
+    path: "/drinksOrderInfo",
+    name: "填寫飲料訂單",
     icon: "nc-icon nc-circle-09",
-    component: UserProfile,
+    component: DrinksOrderInfo,
     layout: "/admin",
   },
   {
-    path: "/table",
-    name: "Table List",
+    path: "/drinkOrderList",
+    name: "查詢飲料訂單",
     icon: "nc-icon nc-notes",
-    component: TableList,
-    layout: "/admin",
-  },
-  {
-    path: "/typography",
-    name: "Typography",
-    icon: "nc-icon nc-paper-2",
-    component: Typography,
-    layout: "/admin",
-  },
-  {
-    path: "/icons",
-    name: "Icons",
-    icon: "nc-icon nc-atom",
-    component: Icons,
-    layout: "/admin",
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    icon: "nc-icon nc-bell-55",
-    component: Notifications,
+    component: DrinkOrderList,
     layout: "/admin",
   },
 ];
