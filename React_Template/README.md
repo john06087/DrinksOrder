@@ -123,7 +123,7 @@ light-bootstrap-dashboard-react
     │   └── Sidebar
     │       └── Sidebar.js
     └── views
-        ├── DrinkOrderList.js
+        ├── DrinksOrderList.js
         └── DrinksOrderInfo.js
 ```
 

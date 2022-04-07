@@ -10,7 +10,7 @@ import * as validationUtil from "../util/ValidationUtil"
 
 
 
-function DrinkOrderList() {
+function DrinksOrderList() {
   // State
   const [drinksOrderList, setDrinksOrderList] = useState([]);
 
@@ -102,4 +102,4 @@ function DrinkOrderList() {
   );
 }
 
-export default DrinkOrderList;
+export default DrinksOrderList;

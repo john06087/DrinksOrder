@@ -16,7 +16,7 @@
 
 */
 import DrinksOrderInfo from "views/DrinksOrderInfo.js";
-import DrinkOrderList from "views/DrinkOrderList.js";
+import DrinksOrderList from "views/DrinksOrderList.js";
 
 const dashboardRoutes = [
   {
@@ -27,10 +27,10 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/drinkOrderList",
+    path: "/DrinksOrderList",
     name: "查詢飲料訂單",
     icon: "nc-icon nc-notes",
-    component: DrinkOrderList,
+    component: DrinksOrderList,
     layout: "/admin",
   },
 ];
