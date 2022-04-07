@@ -18,42 +18,42 @@ function DrinksOrderInfo() {
   const [note, setNote] = useState(''); // 備註
   const [validateErrorMsg, setValidateErrorMsg] = useState(''); // 表單驗證錯誤訊息
 
-
-
+  
   // Function
+  // 送出飲料訂單
   function submitDrinksOrder() {
-     // 建立 input
-     let today = new Date();
-     let monthString = (today.getMonth() + 1) < 10 ? '0' + (today.getMonth() + 1).toString() : (today.getMonth() + 1).toString()
-     let dayString = today.getDate() < 10 ? '0' + today.getDate().toString() : today.getDate().toString()
-     let orderDate = today.getFullYear().toString() + monthString + dayString;
-     let vin = {
-       User_name: userName,
-       Drinks_name: drinksName,
-       Sugar: sugar,
-       Ice: ice,
-       Price: price,
-       Note: note,
-       Order_date: orderDate
-     }
+    // 建立 input
+    let today = new Date();
+    let monthString = (today.getMonth() + 1) < 10 ? '0' + (today.getMonth() + 1).toString() : (today.getMonth() + 1).toString()
+    let dayString = today.getDate() < 10 ? '0' + today.getDate().toString() : today.getDate().toString()
+    let orderDate = today.getFullYear().toString() + monthString + dayString;
+    let vin = {
+      User_name: userName,
+      Drinks_name: drinksName,
+      Sugar: parseInt(sugar, 10),
+      Ice: parseInt(ice, 10),
+      Price: parseInt(price, 10),
+      Note: note,
+      Order_date: orderDate
+    }
 
-     // 驗證輸入參數
-     let validateResult = validateInput();
+    // 驗證輸入參數
+    let validateResult = validateInput();
  
-     // call API
-     if(validateResult) {
-       callApiUtil.callApiPost('http://localhost:8000/drinksController/saveDrinksOrder', vin).then((data) => {
-         if (validationUtil.notEmpty(data)) {
+    // call API
+    if(validateResult) {
+      callApiUtil.callApiPost('http://localhost:8000/drinksController/saveDrinksOrder', vin).then((data) => {
+        if (validationUtil.notEmpty(data)) {
           if (data.result) {
             swal.fire('Success!', '新增訂單成功', 'success');
           } else {
             swal.fire('Error!', '新增訂單失敗', 'error');
           }
-         }
-       })
-     }
+        }
+      })
+    }
   }
- 
+  // 驗證 input 參數
   function validateInput() {
     let validateResult = true;
 
