@@ -53,6 +53,7 @@ function DrinksOrderInfo() {
       })
     }
   }
+
   // 驗證 input 參數
   function validateInput() {
     let validateResult = true;
@@ -80,7 +81,7 @@ function DrinksOrderInfo() {
           <Col md="8">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">Edit Profile</Card.Title>
+                <Card.Title as="h4">飲料訂單填寫</Card.Title>
               </Card.Header>
               <Card.Body>
                 <Form>
@@ -162,7 +163,7 @@ function DrinksOrderInfo() {
                   <Row>
                     <Col md="12">
                       <Form.Group>
-                      <span className="text-danger">*</span><label>Note</label>
+                      <label>Note</label>
                         <Form.Control
                           cols="80"
                           placeholder="加料，備註事項"

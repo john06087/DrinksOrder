@@ -18,7 +18,7 @@ function DrinksOrderList() {
   // ComponentDidMount
   React.useEffect(() => {
     // 初始化查詢當天日期
-    let date = '1234'
+    let date = '20220102'
 
     // Action: 查詢飲料訂單
     queryDrinksOrderList(date);
