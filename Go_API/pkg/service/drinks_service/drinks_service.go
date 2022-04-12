@@ -30,7 +30,7 @@ func SaveDrinksOrder(drinks_order models.Drinks_order) bool {
 func QueryDrinksOrderByDate(orderDate string) []models.Drinks_order {
 	// 1. 以日期取得飲料訂單
 	var drinks_order_slice []models.Drinks_order
-	rows, err := models.Db.Query("select * from bc_db.drinks_order")
+	rows, err := models.Db.Query("select * from bc_db.drinks_order where order_date = ?", orderDate)
 	error_handler.CheckErr(err)
 
 	// 2. 整理回傳格式

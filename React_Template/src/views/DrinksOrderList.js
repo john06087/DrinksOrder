@@ -1,36 +1,58 @@
 // react-bootstrap components
 import {
-  Card, Col, Container,
+  Button, Card, Col, Container,
   Row, Table
 } from "react-bootstrap";
-import React, { useState } from "react";
+import React, { useState , forwardRef} from "react";
 import swal from 'sweetalert2';
 import * as callApiUtil from "../util/CallApiUtil"
 import * as validationUtil from "../util/ValidationUtil"
+import * as formatUtil from "../util/FormatUtil"
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
 function DrinksOrderList() {
   // State
   const [drinksOrderList, setDrinksOrderList] = useState([]);
+  const [orderDate, setOrderDate] = useState('');
+  const DateCustomInput = forwardRef(({ value, onClick }, ref) => (
+    <Button className="btn-fill" type="button" variant="dark" onClick={onClick} ref={ref}>
+      訂單日期: {value}
+    </Button>
+  ));
 
-
+  
   // ComponentDidMount
   React.useEffect(() => {
-    // 初始化查詢當天日期
-    let date = '20220102'
 
-    // Action: 查詢飲料訂單
-    queryDrinksOrderList(date);
+    // 初始化查詢當天日期
+    onOrderDateChange(new Date())
+
   }, []);
 
-
+  
   // Function
+  // 訂單日期變更時
+  function onOrderDateChange(date) {
+    setOrderDate(date)
+
+    // 日期格式轉換
+    var orderDate = formatUtil.dateFormatPattern1(date)
+
+    // Action: 查詢飲料訂單
+    queryDrinksOrderList(orderDate);
+  }
+
+  // Action: 查詢飲料訂單
   function queryDrinksOrderList(date) {
     // 建立 input
     let vin = {
       orderDate: date
     }
+
+    console.log(date);
 
     // call API
     callApiUtil.callApiPost('http://localhost:8000/drinksController/drinksOrderList', vin).then((data) => {
@@ -39,7 +61,7 @@ function DrinksOrderList() {
           
           // setState
           let drinksOrderSlice = data.drinks_order_slice
-          setDrinksOrderList(drinksOrderList => (drinksOrderSlice)); 
+          setDrinksOrderList(drinksOrderSlice); 
         } else {
           swal.fire('Error!', '取得資料失敗', 'error');
         }
@@ -57,10 +79,12 @@ function DrinksOrderList() {
             <Card className="strpied-tabled-with-hover">
               <Card.Header>
                 <Card.Title as="h4">資訊部飲料訂單</Card.Title>
-                <p className="card-category">
-                  (日期) 訂單
-                </p>
-              </Card.Header>
+                  <DatePicker
+                    selected={orderDate}
+                    onChange={(date) => onOrderDateChange(date)}
+                    customInput={<DateCustomInput />}
+                  />
+                </Card.Header>
               <Card.Body className="table-full-width table-responsive px-0">
                 <Table className="table-hover table-striped">
                   <thead>

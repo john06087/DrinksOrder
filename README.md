@@ -25,3 +25,8 @@ CREATE TABLE `bc_db`.`drinks_order` (
 	Jwt
 	修改訂單、刪除訂單
 	依照日期查詢訂單
+	
+	
+	
+npm install react-datepicker --save
+npm install axios

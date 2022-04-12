@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import swal from 'sweetalert2';
 import * as callApiUtil from "../util/CallApiUtil"
 import * as validationUtil from "../util/ValidationUtil"
+import * as formatUtil from "../util/FormatUtil"
 
 
 function DrinksOrderInfo() {
@@ -24,9 +25,7 @@ function DrinksOrderInfo() {
   function submitDrinksOrder() {
     // 建立 input
     let today = new Date();
-    let monthString = (today.getMonth() + 1) < 10 ? '0' + (today.getMonth() + 1).toString() : (today.getMonth() + 1).toString()
-    let dayString = today.getDate() < 10 ? '0' + today.getDate().toString() : today.getDate().toString()
-    let orderDate = today.getFullYear().toString() + monthString + dayString;
+    let orderDate = formatUtil.dateFormatPattern1(today);
     let vin = {
       User_name: userName,
       Drinks_name: drinksName,
