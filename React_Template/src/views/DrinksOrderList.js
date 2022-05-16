@@ -17,6 +17,7 @@ function DrinksOrderList() {
   // State
   const [drinksOrderList, setDrinksOrderList] = useState([]);
   const [orderDate, setOrderDate] = useState('');
+  const [totalPrice, setTotalPrice] = useState(0);
   const DateCustomInput = forwardRef(({ value, onClick }, ref) => (
     <Button className="btn-fill" type="button" variant="dark" onClick={onClick} ref={ref}>
       訂單日期: {value}
@@ -62,6 +63,16 @@ function DrinksOrderList() {
           // setState
           let drinksOrderSlice = data.drinks_order_slice
           setDrinksOrderList(drinksOrderSlice); 
+
+          // 設定總金額
+          let totalPrice = 0;
+          if (validationUtil.notEmpty(drinksOrderSlice) && drinksOrderSlice.length > 0){
+            drinksOrderSlice.forEach(function(item){
+              totalPrice += item.Price
+            });
+          }
+          setTotalPrice(totalPrice);
+          
         } else {
           swal.fire('Error!', '取得資料失敗', 'error');
         }
@@ -118,6 +129,7 @@ function DrinksOrderList() {
                   </tbody>
                 </Table>
               </Card.Body>
+              <h3>總金額: <span className="text-danger"> {totalPrice} </span> 元</h3>
             </Card>
           </Col>
         </Row>
