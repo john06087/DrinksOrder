@@ -1,3 +1,42 @@
+> # Line 團購機器人
+
+## 實作動機 - motivation
+家人想要想要建立一個團購群組作為副業，但客人下定商品時總是用私訊或是直接在貼文底下留言，統計起來非常困擾，
+於是在想減輕家人負擔的情況下，建立了一支可以自動記錄顧客訂單的「LINE 團購機器人」。
+
+## 檔案簡介 - introduction
+* **conf** - 
+	* **sapp.ini** - Propertie 檔
+* **pkg** - 專案主要邏輯程式瑪放置資料夾
+* **routers** - 
+* **setting** - 
+	* **setting.go** - 
+* **smain.go** - 專案進入點
+
+## 使用技術 - skill
+* 使用 Golang、React、MySQL 以前後端分離的模式來完成專案
+* 後端撰寫搭配 Golang 
+
+## 功能展示 - demo
+* **新增訂單** - 偵測用戶私訊內容，若符合訂單格式，機器人會自動記錄，並回傳告知使用者成功失敗： 
+  * 情境 1. 驗證資料正確 <br/>
+
+  * 情境 2. 驗證資料錯誤 <br/>
+
+
+## 結語 - epilogue
+經過這個專案有稍微熟悉 Go 這個語言，
+但其實還是有些特色沒有運用到，如: goroutine & channel 等等
+
+
+## 參考資料 - references
+* [菜鳥工程師 肉豬 - Golang 全系列文章](https://matthung0807.blogspot.com/p/blog-page.html "link")
+* [eddycjy 煎魚 - go-gin-example](https://github.com/eddycjy/go-gin-example "link")
+* [React 前端模板](https://www.creative-tim.com/product/light-bootstrap-dashboard-react# "link")
+
+
+
+
 # DrinksOrder
 - 專案使用技術
 	React、Golang、MySQL
