@@ -96,39 +96,42 @@ function DrinksOrderList() {
                     customInput={<DateCustomInput />}
                   />
                 </Card.Header>
-              <Card.Body className="table-full-width table-responsive px-0">
-                <Table className="table-hover table-striped">
-                  <thead>
-                    <tr>
-                      <th className="border-0">編號</th>
-                      <th className="border-0">訂購姓名</th>
-                      <th className="border-0">飲品名稱</th>
-                      <th className="border-0">甜度</th>
-                      <th className="border-0">冰量</th>
-                      <th className="border-0">價格</th>
-                      <th className="border-0">備註</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {drinksOrderList != null && drinksOrderList.length > 0 ?
-                     drinksOrderList.map((drinksOrder, index) => {
-                      return (  
-                        <tr key={index}>
-                          <td>{index + 1}</td>
-                          <td>{drinksOrder.User_name}</td>
-                          <td>{drinksOrder.Drinks_name}</td>
-                          <td>{drinksOrder.Sugar == 0 ? '無糖' : drinksOrder.Sugar == 1 ? '微糖' : 
-                               drinksOrder.Sugar == 2 ? '少糖' : '全糖'}</td>
-                          <td>{drinksOrder.Ice == 0 ? '去冰' : drinksOrder.Ice == 1 ? '微冰' : 
-                               drinksOrder.Ice == 2 ? '少冰' : '正常冰'}</td>
-                          <td>{drinksOrder.Price} 元</td>
-                          <td>{drinksOrder.Note}</td>
-                        </tr>);
-                      }):null
-                    }                  
-                  </tbody>
-                </Table>
-              </Card.Body>
+                {drinksOrderList != null && drinksOrderList.length > 0 ? 
+                  <Card.Body className="table-full-width table-responsive px-0">
+                    <Table className="table-hover table-striped">
+                      <thead>
+                        <tr>
+                          <th className="border-0">編號</th>
+                          <th className="border-0">訂購姓名</th>
+                          <th className="border-0">飲品名稱</th>
+                          <th className="border-0">甜度</th>
+                          <th className="border-0">冰量</th>
+                          <th className="border-0">價格</th>
+                          <th className="border-0">備註</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {drinksOrderList.map((drinksOrder, index) => {
+                          return (  
+                            <tr key={index}>
+                              <td>{index + 1}</td>
+                              <td>{drinksOrder.User_name}</td>
+                              <td>{drinksOrder.Drinks_name}</td>
+                              <td>{drinksOrder.Sugar == 0 ? '無糖' : drinksOrder.Sugar == 1 ? '微糖' : 
+                                  drinksOrder.Sugar == 2 ? '少糖' : '全糖'}</td>
+                              <td>{drinksOrder.Ice == 0 ? '去冰' : drinksOrder.Ice == 1 ? '微冰' : 
+                                  drinksOrder.Ice == 2 ? '少冰' : '正常冰'}</td>
+                              <td>{drinksOrder.Price} 元</td>
+                              <td>{drinksOrder.Note}</td>
+                            </tr>);
+                          })
+                        }                  
+                      </tbody>
+                    </Table>
+                  </Card.Body>
+                :
+                  <h2>查無訂單資訊</h2>
+                }
               <h3>總金額: <span className="text-danger"> {totalPrice} </span> 元</h3>
             </Card>
           </Col>
