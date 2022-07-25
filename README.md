@@ -1,17 +1,33 @@
-> # Line 團購機器人
+> # 飲料訂單系統
 
 ## 實作動機 - motivation
-家人想要想要建立一個團購群組作為副業，但客人下定商品時總是用私訊或是直接在貼文底下留言，統計起來非常困擾，
-於是在想減輕家人負擔的情況下，建立了一支可以自動記錄顧客訂單的「LINE 團購機器人」。
+希望藉由實作專案的方式更熟悉 Golang
 
 ## 檔案簡介 - introduction
-* **conf** - 
-	* **sapp.ini** - Propertie 檔
-* **pkg** - 專案主要邏輯程式瑪放置資料夾
-* **routers** - 
-* **setting** - 
-	* **setting.go** - 
-* **smain.go** - 專案進入點
+* **Go_API** - Golang 專案資料夾
+	* **conf**
+		* **sapp.ini** - Propertie 設定檔
+	* **pkg**
+		* **controller**
+			* **drinks_controller.go** - 飲料 controller
+		* **error_handler**
+			* **error.go** - 錯誤處理
+		* **models**
+			* **database_model.go** - 資料庫 model
+			* **drinks_order.go** - 訂單 model
+		* **service**
+			* **drinks_service.go** - 飲料 service
+		* **util**
+			* **validateUtil.go** - 驗證相關的 Util
+		* **vo**
+			* **drinks_order_vo.go** - 訂單顯示資訊
+	* **routers**
+		* **router.go** - 設定要接收的 request
+	* **setting** - 
+		* **setting.go** - 初始化 Properties 設定
+	* **main.go** - 專案啟動檔
+---
+* **React_Template** - React 專案資料夾
 
 ## 使用技術 - skill
 * 使用 Golang、React、MySQL 以前後端分離的模式來完成專案
@@ -27,6 +43,7 @@
 ## 結語 - epilogue
 經過這個專案有稍微熟悉 Go 這個語言，
 但其實還是有些特色沒有運用到，如: goroutine & channel 等等
+如果在寫法上有更好的地方，還請多多指教
 
 
 ## 參考資料 - references
@@ -64,9 +81,7 @@
 	
 	3. 後端 go mod tidy -> go run .
 	
-- 專案希望達成目的
-	因目前還未經手過 Golang 的案子，希望藉由此專案更熟悉 Golang 這個語言
-	如果在寫法上有更好的地方，還請多多指教
+
 
 - 專案待開發項目
 	修改訂單、刪除訂單
