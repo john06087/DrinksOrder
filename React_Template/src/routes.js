@@ -27,7 +27,7 @@ const dashboardRoutes = [
     layout: "/admin",
   },
   {
-    path: "/DrinksOrderList",
+    path: "/drinksOrderList",
     name: "查詢飲料訂單",
     icon: "nc-icon nc-notes",
     component: DrinksOrderList,
