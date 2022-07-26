@@ -68,12 +68,32 @@
   * 驗證 DB <br/>
 ![無訂單2](https://user-images.githubusercontent.com/47651623/180748509-80812b08-98de-4936-bdd2-81875dd7d6a4.jpg)
 
+## 使用方法 - instruction
+> #### MySQL 新建資料表
+
+    CREATE DATABASE `bc_db`;
+    
+    DROP TABLE IF EXISTS `bc_db`.`drinks_order`;
+    CREATE TABLE `bc_db`.`drinks_order` (
+      `id` int unsigned NOT NULL AUTO_INCREMENT,
+      `user_name` varchar(30) NOT NULL COMMENT '訂購者姓名',
+      `drinks_name` varchar(30) NOT NULL COMMENT '飲料名稱',
+      `sugar` int NOT NULL COMMENT '甜度',
+      `ice` int NOT NULL COMMENT '冰量',
+      `price` int NOT NULL COMMENT '金額',
+      `note` varchar(100) DEFAULT '' COMMENT '加料，備註事項',
+      `order_date` int COMMENT '訂購日期',
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='飲料訂單';
+    
+> #### React 指令
+
+> #### Golang 指令
 
 ## 結語 - epilogue
 經過這個專案有稍微熟悉 Go 這個語言，
-但其實還是有些特色沒有運用到，如: goroutine & channel 等等
+但其實還是有些特色沒有運用到，如: goroutine & channel 等等，
 如果在寫法上有更好的地方，還請多多指教
-
 
 ## 參考資料 - references
 * [菜鳥工程師 肉豬 - Golang 全系列文章](https://matthung0807.blogspot.com/p/blog-page.html "link")
@@ -83,22 +103,7 @@
 
 
 
-- 專案啟動流程
-	1. MySQL 新建資料表
-	CREATE DATABASE `bc_db`;
-
-	DROP TABLE IF EXISTS `bc_db`.`drinks_order`;
-	CREATE TABLE `bc_db`.`drinks_order` (
-	  `id` int unsigned NOT NULL AUTO_INCREMENT,
-	  `user_name` varchar(30) NOT NULL COMMENT '訂購者姓名',
-	  `drinks_name` varchar(30) NOT NULL COMMENT '飲料名稱',
-	  `sugar` int NOT NULL COMMENT '甜度',
-	  `ice` int NOT NULL COMMENT '冰量',
-	  `price` int NOT NULL COMMENT '金額',
-	  `note` varchar(100) DEFAULT '' COMMENT '加料，備註事項',
-	  `order_date` int COMMENT '訂購日期',
-	  PRIMARY KEY (`id`)
-	) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='飲料訂單';
+	
 
 	2. 前端 npm install -> npm start
 			npm install react-datepicker --save
