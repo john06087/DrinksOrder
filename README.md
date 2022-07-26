@@ -87,8 +87,16 @@
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='飲料訂單';
     
 > #### React 指令
+* **下載相關套件** <br/>
+`npm install`
+* **啟動專案** <br/>
+`npm start`
 
 > #### Golang 指令
+* **增加遺失的依賴，移除未使用的依賴** <br/>
+`go mod tidy`
+* **啟動專案** <br/>
+`go run`
 
 ## 結語 - epilogue
 經過這個專案有稍微熟悉 Go 這個語言，
@@ -99,16 +107,3 @@
 * [菜鳥工程師 肉豬 - Golang 全系列文章](https://matthung0807.blogspot.com/p/blog-page.html "link")
 * [eddycjy 煎魚 - go-gin-example](https://github.com/eddycjy/go-gin-example "link")
 * [React 前端模板](https://www.creative-tim.com/product/light-bootstrap-dashboard-react# "link")
-
-
-
-
-	
-
-	2. 前端 npm install -> npm start
-			npm install react-datepicker --save
-			npm install axios
-	
-	3. 後端 go mod tidy -> go run .
-	
-	
