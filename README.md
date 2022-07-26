@@ -20,7 +20,7 @@
 		* **util**
 			* **validateUtil.go** - 驗證相關的 Util
 		* **vo**
-			* **drinks_order_vo.go** - 訂單 
+			* **drinks_order_vo.go** - 訂單 vo
 	* **routers**
 		* **router.go** - 設定要接收的 request
 	* **setting** - 
